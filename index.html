@@ -41,6 +41,7 @@
 <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--HTML5垫片和回应。js IE8支持HTML5元素和媒体查询-->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -55,63 +56,7 @@
 		<div class="row">
 			<!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/retina-1.1.0.js"></script>
-<script src="assets/js/jquery.unveilEffects.js"></script>
-<script language=JavaScript >
-<!--
-var caution = false
-function setCookie(name, value, expires, path, domain, secure) {
-var curCookie = name + "=" + escape(value) +
-((expires) ? "; expires=" + expires.toGMTString() : "") +
-((path) ? "; path=" + path : "") +
-((domain) ? "; domain=" + domain : "") +
-((secure) ? "; secure" : "")
-if (!caution || (name + "=" + escape(value)).length <= 4000)
-document.cookie = curCookie
-else
-if (confirm("Cookie exceeds 4KB and will be cut!"))
-document.cookie = curCookie
-}
-function getCookie(name) {
-var prefix = name + "="
-var cookieStartIndex = document.cookie.indexOf(prefix)
-if (cookieStartIndex == -1)
-return null
-var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
-if (cookieEndIndex == -1)
-cookieEndIndex = document.cookie.length
-return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
-}
-function deleteCookie(name, path, domain) {
-if (getCookie(name)) {
-document.cookie = name + "=" +
-((path) ? "; path=" + path : "") +
-((domain) ? "; domain=" + domain : "") +
-"; expires=Thu, 01-Jan-70 00:00:01 GMT"
-}
-}
-function fixDate(date) {
-var base = new Date(0)
-var skew = base.getTime()
-if (skew > 0)
-date.setTime(date.getTime() - skew)
-}
-var now = new Date()
-fixDate(now)
-now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
-var visits = getCookie("counter")
-if (!visits)
-visits = 1
-else
-visits = parseInt(visits) + 1
-setCookie("counter", visits, now)
-document.write("<div style='color:white'>您是第" + visits + "位访问本专题的!</div>")
 
-// -->
-</script>
 			<div class="col-md-10 col-md-offset-1 mt">
 				<h3>南京工程学院创新学院</h3>
 				<h1 class="mb">智能感知实验室</h1>
@@ -233,7 +178,64 @@ document.write("<div style='color:white'>您是第" + visits + "位访问本专�
 		</div>
 	</div><!--/container -->
 </div><!--/C -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--放在文档的最后，页面加载速度更快-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/retina-1.1.0.js"></script>
+<script src="assets/js/jquery.unveilEffects.js"></script>
+<script language=JavaScript >
+<!--
+var caution = false
+function setCookie(name, value, expires, path, domain, secure) {
+var curCookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "")
+if (!caution || (name + "=" + escape(value)).length <= 4000)
+document.cookie = curCookie
+else
+if (confirm("Cookie exceeds 4KB and will be cut!"))
+document.cookie = curCookie
+}
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+if (cookieEndIndex == -1)
+cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+function deleteCookie(name, path, domain) {
+if (getCookie(name)) {
+document.cookie = name + "=" +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+}
+}
+function fixDate(date) {
+var base = new Date(0)
+var skew = base.getTime()
+if (skew > 0)
+date.setTime(date.getTime() - skew)
+}
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)
+visits = 1
+else
+visits = parseInt(visits) + 1
+setCookie("counter", visits, now)
+document.write("<div style='color:white'>您是第" + visits + "位访问本专题的!</div>")
 
+// -->
+</script>
 
 </body>
 </html>
