@@ -1,55 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"><!--语言english-->
 <head>
-    <title>welcome</title>
-    
-    <link rel="icon" href="assets/img/favicon.ico">
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="login.css"/>  
-    <script type="text/javascript" src="login.js"></script>  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--
+     IE8刚推出的时候，很多网页由于重构的问题，无法适应较高级的浏览器，所以使用X-UA-Compatible标签强制IE8采用低版本方式渲染。
+     使用上述代码后，开发者无需考虑网页是否兼容IE8浏览器，只需确保网页在IE6，IE7下的表现就可以了。IE=edge告诉IE使用最新的引擎渲染网页
+ -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+    width: 控制viewport的大小，可以指定的一个值，如果600，或者特殊的值，如device-width为设备的宽度（单位为缩放为100%的CSS的像素）。
+    height：和width相对应，指定高度。
+    initial-scale：初始缩放比例，也即是当页面第一次load的时候缩放比例
+-->
+<meta name="description" content=""><!--content网页描述文字-->
+<meta name="author" content=""><!--作者-->
+<link rel="icon" href="assets/img/favicon.ico">
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>智能感知实验室</title>
+
+<!-- Bootstrap core CSS -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<!--
+	<link>标签定义文档与外部资源的关系
+	<link>标签最常见的用途是链接外部样式表
+-->
+
+<!-- 
+	Custom styles for this template 
+    这个模板的定制样式
+-->
+<link href="assets/css/custom-animations.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+
+
+<!-- 
+	IE10 viewport hack for Surface/desktop Windows 8 bug 
+    IE10视图操作系统/桌面window 8漏洞
+-->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--HTML5垫片和回应。js IE8支持HTML5元素和媒体查询-->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
-    <!--视频播放-->
-    <video autoplay loop style="width: 100% height:100%">
-    <source src="steepalsj_x264.mp4" type="video/mp4">
-    <source src="steepalsj_x264 - 副本.ogg" type="video/mp4">  
-    </video>
+	<!--导航栏-->
 
-<div id="login_frame">  
-  
-    <p id="image_logo"><img src="images/login/fly.png" width=70px;height=70px;></p>  
-  
-    <form method="post" action="login.js">  
-  
-        <p><label class="label_input">用户名</label><input type="text" id="username" class="text_field"/></p>  
-        <p><label class="label_input">密码</label><input type="text" id="password" class="text_field"/></p>  
-  
-        <div id="login_control">  
-            <input type="button" id="btn_login" value="登录" onclick="login();"/>  
-            <a id="forget_pwd" href="forget_pwd.html">忘记密码？</a>  
-        </div>  
+   <ul class="nav nav-pills nav-justified" >
+	<li class="active"><a href="index.html">主页</a></li>
+	<li><a href="photo.html">相册</a></li>
+	<li><a href="#">日程</a></li>
+	<li><a href="#">下载</a></li>
+	</ul>
 
-    </form>  
-</div>  
+
+<!-- ********** HEADER ********** -->
+<div id="h">
+	<div class="container">
+		<div class="row">
+			<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--放在文档的最后，页面加载速度更快-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/retina-1.1.0.js"></script>
+<script src="assets/js/jquery.unveilEffects.js"></script>
+<script language=JavaScript >
+<!--
+var caution = false
+function setCookie(name, value, expires, path, domain, secure) {
+var curCookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "")
+if (!caution || (name + "=" + escape(value)).length <= 4000)
+document.cookie = curCookie
+else
+if (confirm("Cookie exceeds 4KB and will be cut!"))
+document.cookie = curCookie
+}
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+if (cookieEndIndex == -1)
+cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+function deleteCookie(name, path, domain) {
+if (getCookie(name)) {
+document.cookie = name + "=" +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+}
+}
+function fixDate(date) {
+var base = new Date(0)
+var skew = base.getTime()
+if (skew > 0)
+date.setTime(date.getTime() - skew)
+}
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)
+visits = 1
+else
+visits = parseInt(visits) + 1
+setCookie("counter", visits, now)
+document.write("<div style='color:white'>您是第" + visits + "位访问本专题的!</div>")
+
+// -->
+</script>
+
+			<div class="col-md-10 col-md-offset-1 mt">
+				<h3>南京工程学院创新学院</h3>
+				<h1 class="mb">智能感知实验室</h1>
+				<h1>A210</h1>
+				<p class="mt" align="center"><button class="btn btn-white btn-theme">实验室指导老师：孙斌</button></p>
+			    <p class="mt" align="center"><button class="btn btn-white btn-theme">联系方式：QQ：2875700829</button></p>
+			    <p class="mt" align="center" onclick="javascrtpt:window.location.href='http://qxu1591260003.my3w.com'"><button class="btn btn-white btn-theme">我们的论坛：a210.top</button></p>
+			</div>
+			<div class="col-md-12 mt hidden-xs">
+				<img src="assets/img/graph.png" class="img-responsive aligncenter" alt="" data-effect="slide-bottom">
+			</div>
+		</div>
+	</div><!--/container -->
+</div><!--/h -->
+
+<!-- ********** FIRST ********** -->
+<div id="w">
+	<div class="row nopadding">
+		<div class="col-md-5 col-md-offset-1 mt">
+			<h4>四轴飞行器</h4>
+			<p>四轴飞行器的智能导航指的是利用机器视觉技术、人工智能技术让四轴飞行器能像人一样在复杂环境中活动。</p>
+			<p>随着人工智能的不断发展，配备高清摄像机、各种安保设备的四轴飞行器将广泛应用在公安、消防、家庭和单位安保领域，四轴将成为极度智能、行动敏捷的电子警察、电子消防员、电子保安、电子管家，也许在不久的将来，你会因为有一个会飞的家庭照看机器人而感到无比的贴心和安全。</p>
+			<p>TED大会上展示的四轴飞行器搭建建筑的视频也许不少爱好者都看过，这是相当有前景的应用，比起3D打印一座房子，用一群微小的四轴飞行器来构建庞大的建筑更加切合实际和灵活髙效，也许有一天你路过建筑工地，看到头顶上不是一群建筑工人在忙碌，而是一群嗡嗡作响的四轴飞行器在井然有序的工作，那个时候你可不要吃惊眼前看到的一切。</p>
+			
+			<input class="btn btn-info btn-theme" type="button" value="详情请点击" onclick="javascrtpt:window.location.href='https://baike.baidu.com/item/%E5%9B%9B%E8%BD%B4%E9%A3%9E%E8%A1%8C%E5%99%A8/3216074?fr=aladdin#4'">
+		</div>
+		
+		<div class="col-md-6 pull-right">
+			<img src="assets/img/shot01.png" class="img-responsive alignright" alt="" data-effect="slide-right">
+		</div>
+	</div><!--/row -->
+</div><!--/container -->
+
+<!-- ********** BLUE SECTION - PICTON ********** -->
+<div id="picton">
+	<div class="row nopadding">
+		<div class="col-md-6 pull-left">
+			<img src="assets/img/shot02.png" class="img-responsive alignleft" alt="" data-effect="slide-left">
+		</div>
+		<div class="col-md-5 mt">
+			<h4>六足机器人</h4>
+			<p>六足机器人又叫蜘蛛机器人，是多足机器人的一种。仿生式六足机器人，顾名思义，六足机器人在我们理想架构中，我们借鉴了自然界。</p>
+			<p>简单来说，舵机控制板就是机器人的中枢神经，负责动作协调，另外的机器人主控就是大脑，负责处理外界信息，统一指挥，机器人扩展的传感器就是感官系统，负责接收外界信息。舵机控制板并不是机器人的核心，它只是负责控制舵机的模块而已，功能再多也只能让机器人跳跳舞啥的，想实现机器人智能化必须要添加另外的主控，也就是给机器人装个大脑，什么样的主控呢：大家学的51，AVR，ARM单片机都可以作为机器人的主控，再在主控上添加各种传感器模块就相当于给机器人安上了口鼻眼耳等等，这样便初步形成了机器人的智能化框架</p>
+			<p>科学家最新研制的ATHLETE(全地形六足地外探测器)机器人对于未来月球基地建设和发展充当着至关重要的角色。</p>
+			<input class="btn btn-info btn-theme" type="button" value="详情请点击" onclick="javascrtpt:window.location.href='http://fc17bc2375ba443fa0fbdd0eb24f761d.wqdian.cn/'">
+		</div>
+
+	</div><!--row -->
+</div><!--/Picton -->
+
+
+<!-- ********** BLUE SECTION - CURIOUS ********** -->
+<div id="curious">
+	<div class="row nopadding">
+		<div class="col-md-5 col-md-offset-1 mt">
+			<h4>室内环境数据采集机器人与可视化展示平台</h4>
+			<p> 三维模型 激光扫描 KINECT </p>
+			<p>精确的环境三维模型在公共服务、救援、军事侦察等领域有着重要作用,激光扫描传感器在环境三维模型重建中应用广泛。本文提出一种由pioneer3-AT移动机器人(数据采集平台)和SICKLMS200激光扫描仪(测量环境距离信息)组成的三维环</p>
+			<p>境模型重建系统。利用Player/stage开放软件实现对移动机器人和激光扫描仪控制来进行激光扫描数据采集并采用JPEG-LS压缩算法对扫描数据进行压缩以提高数据传输率。在远程主机通过OpenGL技术对扫描数据进行处理以显示室内环境三维模型。实验结果表明,可得到较精确的3维环境模型。</p>
+			<p class="mt"><button class="btn btn-white btn-theme">详情请点</button></p>
+		</div>
+		
+		<div class="col-md-6 pull-right">
+			<img src="assets/img/shot03.png" class="img-responsive alignright" alt="" data-effect="slide-right">
+		</div>
+	</div><!--/row -->
+</div><!--/curious -->
+
+<!-- ********** BLUE SECTION - MALIBU ********** -->
+<div id="malibu">
+	<div class="row nopadding">
+		<div class="col-md-6 pull-left">
+			<img src="assets/img/shot04.png" class="img-responsive alignleft" alt="" data-effect="slide-left">
+		</div>
+		<div class="col-md-5 mt">
+			<h4>实验室简介</h4>
+			<p>以上是对实验室一些作品的展示</p>
+			<p>本实验主要对机器视觉进行开发与设计，曾多次参加中国机器人大赛，江苏省机器人大赛，全国大学生智能互联创新大赛</p>
+			<h4>培养方向</h4>
+            <p>C/c++/Qt图形化用户界面开发、串口通信</p>
+            <p>三维建模solidworks cad、3D打印</p>
+            <p>arduino、51单片机、stm32、树莓派</p>
+			
+		</div>
+
+	</div><!--row -->
+</div><!--/Malibu -->
+
+
+
+
+<!-- ********** FOOTER ********** -->
+<div id="f">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 centered">
+				<h4 class="mb">如果您有任何问题请联系我们</h4>
+				<h5 class="mb">负责人：翟帅帅 QQ：1351023294 Tel：15738939501</h5>
+                 <h5 class="mb">ASIA QQ:1431086058</h5>
+				<h5 class="mb"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄涛 QQ:1240477267 &nbsp;&nbsp;Tel：18262637510</h5>
+				<form role="form" action="register.php" method="post" enctype="plain"> 
+					<input type="email" name="email" class="subscribe-input" placeholder="输入您的电子邮件地址…" required>
+					<button class='btn btn-lg btn-info btn-sub subscribe-submit' type="submit">Yes, Please</button>
+				</form>
+			
+			</div>
+
+		</div><!--/row -->
+	</div><!--/container -->
+</div><!--/F -->
+
+<!-- ********** CREDITS ********** -->
+<div id="c">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 centered">
+				<p>Copyright &copy; 实验室A210 2017 10 16</p>
+			</div>
+		</div>
+	</div><!--/container -->
+</div><!--/C -->
+
+
+<!--导航栏-->
+    <ul class="nav nav-pills nav-justified">
+	<li class="active"><a href="#">主页</a></li>
+	<li><a href="#">相册</a></li>
+	<li><a href="#">日程</a></li>
+	<li><a href="#">下载</a></li>
+	</ul>
+
+
 </body>
 
-
-<style type="text/css">
-    body{
-        margin: 0;
-    }
-    video{
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -9999;
-    }
-</style>
 </html>
